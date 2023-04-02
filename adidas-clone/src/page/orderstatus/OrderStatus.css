@@ -1,0 +1,212 @@
+.orderstatus {
+    margin-top: 200px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.orderstatus-status {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 65%;
+    margin-left: 30px;
+}
+
+.orderstatus-needhelp {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 20%;
+    margin-right: 30px;
+}
+
+.orderstatus h2 {
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 40px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.orderstatus p {
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+.orderstatus-status p span{
+    font-weight: 700;
+}
+
+.orderstatus-needhelp p span {
+    font-weight: 700;
+    text-decoration: underline;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.orderstatus-needhelp p span:hover {
+    background-color: black;
+    color: white;
+    text-decoration: underline white 1px;
+}
+
+.orderstatus-split {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.orderstatus-split:nth-of-type(6){
+    margin-top: 20px;
+}
+
+.orderstatus-split p{
+    width: 200px;
+    margin-right: 100px;
+}
+
+.order-tracking{
+    margin-top: 200px;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-bottom: 80px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-tracking h1 {
+    font-family: var(--font-family);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    text-transform: uppercase;
+    margin-top: -30px;
+}
+
+
+.order-tracking-inputBox {
+    position: relative;
+
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+.order-tracking-inputBox input {
+    width: 90%;
+    height: 100%;
+    padding-left: 20px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    background-color: white;
+    color: black;
+
+    font-size: 22px;
+    font-weight: 700px;
+    letter-spacing: 0.5px;
+
+    text-align: justify 1px;
+
+}
+
+.order-tracking-inputBox .order-tracking-inputBox-effect {
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    pointer-events: none;
+    color: gray;
+    transition: 0.2s;
+
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.order-tracking-inputBox input:not(:placeholder-shown)~.order-tracking-inputBox-effect,
+.order-tracking-inputBox input:focus~.order-tracking-inputBox-effect {
+    color: black;
+    transform: translateX(-10px) translateY(-30px);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0 10px;
+    background-color: white;
+    font-family: var(--font-family);
+
+}
+
+
+
+.order-tracking-inputBox .order-tracking-inputBox-error {
+    color: red;
+    cursor: text;
+    text-decoration: none;
+    display: none;
+    margin-left: 15px;
+    margin-top: 2px;
+    font-size: 14px;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+.order-tracking-inputBox .order-tracking-inputBox-error:hover {
+    background-color: white;
+    color: red;
+    text-decoration: none;
+}
+
+
+.order-tracking-inputBox input:invalid~.order-tracking-inputBox-error {
+    display: block;
+}
+
+
+
+
+
+.order-tracking-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color-black);
+    padding: 15px 0;
+    box-shadow:
+        2px 2px 0 0px white, 3px 3px 0 0px black;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    color: white;
+    width: fit-content;
+    cursor: pointer;
+    height: 60px;
+}
+
+.order-tracking-button:hover p {
+    color: gray;
+    transition: 0.5s;
+}
+
+.order-tracking-button:hover div {
+    color: gray;
+    transition: 0.5s;
+}
+
+
+.order-tracking-button p {
+    margin: 0 10px;
+    color: var(--primary-color-white);
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}

@@ -1,0 +1,66 @@
+.card4 {
+    display: flexbox;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 622px;
+
+}
+
+
+.card4-image img {
+    width: 622px;
+    height: 412px;
+    cursor: pointer;
+}
+
+.card4-image video {
+    max-width: 622px;
+    max-height: 412px;
+    cursor: pointer;
+}
+
+.card4-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: -20px;
+    min-height: 160px;
+}
+
+.card4-content-title {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 36px;
+    font-weight: 700;
+}
+
+.card4-content-description {
+    font-family: var(--font-family);
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: 400;
+    color: gray;
+    margin-top: -10px;
+    min-height: 40px;
+}
+
+.card4-shopnow {
+    font-family: var(--font-family);
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: solid black underline;
+    margin-top: 0;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.card4-shopnow:hover {
+    background-color: var(--primary-color-black);
+    color: var(--primary-color-white);
+    text-decoration: solid black underline;
+
+}

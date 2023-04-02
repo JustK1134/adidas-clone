@@ -1,0 +1,60 @@
+.interest{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.interest-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    margin: 0 80px;
+}
+
+.interest-title h2{
+    font-family: var(--font-family);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 40px;
+
+}
+
+.interest-title-arrow{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.interest-title-arrow div{
+    margin: 0 16px;
+}
+
+.interest-card{
+    width: 100%;
+}
+
+.interest-card-group{
+    display: flex;
+    justify-content: space-around;
+
+
+}
+
+.interest-title-arrow-button{
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.interest-title-arrow-button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}

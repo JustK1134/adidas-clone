@@ -1,0 +1,374 @@
+.login {
+    margin-top: 200px;
+    width: 100%;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.login span {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.login span:hover{
+    background-color: black;
+    color: white;
+    text-decoration: underline white 1px;
+    transition: 0.3s;
+}
+
+.login a{
+    text-decoration: underline;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.login a p:hover{
+    background-color: black;
+    color: white;
+    text-decoration: underline white 1px;
+}
+
+
+
+.login h1 {
+    font-family: var(--font-family);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    text-transform: uppercase;
+    margin-top: -30px;
+}
+
+
+.login p {
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+
+}
+
+.login-more-info img{
+    width: 100%;
+}
+.login-more-info{
+    width: 45%;
+    margin-right:15px;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin-left: 30px;
+}
+
+
+.inputBox{
+    position: relative;
+
+    height: 60px;
+    margin-bottom: 30px;
+}
+.inputBox input{
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    border: 1px solid rgba(0,0,0,1);
+    background-color: white;
+    color: black;
+
+    font-size: 22px;
+    font-weight: 700px;
+    letter-spacing: 0.5px;
+
+    text-align: justify 1px;
+
+}
+
+.inputBox .inputBox-effect{
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    pointer-events: none;
+    color: gray;
+    transition: 0.2s;
+
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.inputBox input:not(:placeholder-shown) ~ .inputBox-effect,
+.inputBox input:focus ~ .inputBox-effect{
+    color: black;
+    transform: translateX(-10px) translateY(-30px);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0 10px;
+    background-color: white;
+    font-family: var(--font-family);
+
+}
+
+
+.inputBox .inputBox-error {
+    color:red;
+    cursor:text;
+    text-decoration: none;
+    display: none;
+    margin-left: 15px;
+    margin-top: 2px;
+    font-size: 14px;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+.inputBox .inputBox-error:hover{
+    background-color: white;
+    color: red;
+    text-decoration: none;
+}
+
+
+.inputBox input:invalid~.inputBox-error{
+    display: block;
+}
+
+
+
+.login-checkbox-field .login-checkbox-error {
+    color: red;
+    cursor: text;
+    text-decoration: none;
+    display: block;
+    margin-left: 15px;
+    margin-top: 2px;
+    font-size: 14px;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+
+.login-checkbox-field .login-checkbox-error:hover {
+    background-color: white;
+    color: red;
+    text-decoration: none;
+}
+
+.login-checkbox-field input:valid .login-checkbox-error{
+    display: block;
+}
+
+
+ .login .register-gender-checkbox-error{
+    color: red;
+    cursor: text;
+    text-decoration: none;
+    display: block;
+    margin-left: 15px;
+    margin-top: 2px;
+    font-size: 14px;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+
+ .login .register-gender-checkbox-error:hover {
+    background-color: white;
+    color: red;
+    text-decoration: none;
+}
+
+
+.login-checkbox-field {
+    padding: 20px 0;
+    padding-left: 40px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+.login-checkbox-field input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.login-checkmark {
+    position: absolute;
+    top: 15px;
+    left: 3px;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border: solid black 1px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-checkbox-field input:checked~.login-checkmark {
+    background-color: black;
+    color: white;
+}
+
+.login-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color-black);
+    padding: 15px 0;
+    box-shadow:
+        2px 2px 0 0px white, 3px 3px 0 0px black;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    color: white;
+    width: fit-content;
+    cursor: pointer;
+    height: 60px;
+}
+
+.login-button:hover p {
+    color: gray;
+    transition: 0.5s;
+}
+
+.login-button:hover div {
+    color: gray;
+    transition: 0.5s;
+}
+
+
+.login-button p {
+    margin: 0 10px;
+    color: var(--primary-color-white);
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.login-google{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    border: solid black 1px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    width: 45%;
+}
+
+.login-google p{
+    width: 200px;
+    padding-left: 10px;
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+}
+
+.login-google-icon{
+    padding-right: 10px;
+}
+
+.login-google:hover p{
+    color: gray;
+    transition: 0.3s;
+}
+
+.login-more-info-list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: -10px;
+    margin-left: 10px;
+}
+
+.login-more-info-list p{
+    margin-left: 20px;
+}
+
+.register-with-google{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.login h2{
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 40px;
+    text-transform: uppercase;
+    margin-top: -10px;
+}
+
+.register-gender{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 94%;
+}
+
+.register-gender-checkbox-field {
+    padding: 20px 0;
+    padding-left: 40px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+.register-gender-checkbox-field input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.register-gender-checkmark {
+    position: absolute;
+    top: 15px;
+    left: 3px;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border: solid black 1px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.register-gender-checkbox-field input:checked~.register-gender-checkmark {
+    background-color: black;
+    border: solid white 3px;
+    outline: black solid 3px;
+
+}

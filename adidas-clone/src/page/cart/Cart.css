@@ -1,0 +1,248 @@
+.cart {
+    margin-top: 200px;
+
+    margin-bottom: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+
+.cart-yourbag {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 45%;
+    margin-left: 80px;
+    padding-left: 15px;
+
+}
+
+.cart-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 25%;
+    margin-right:80px;
+    padding-right: 15px;
+}
+
+.cart h1 {
+    font-family: var(--font-family);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    text-transform: uppercase;
+    margin-top: -30px;
+}
+
+.cart h2 {
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 40px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.cart p {
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+
+}
+
+.promo-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color-black);
+    padding: 15px 0;
+    box-shadow:
+        2px 2px 0 0px white, 3px 3px 0 0px black;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    color: white;
+    width: fit-content;
+    cursor: pointer;
+    height: 60px;
+    width: 100%;
+
+}
+
+.promo-button:hover p {
+    color: gray;
+    transition: 0.5s;
+}
+
+.promo-button:hover div {
+    color: gray;
+    transition: 0.5s;
+}
+
+
+.promo-button p {
+    margin: 0 10px;
+    color: var(--primary-color-white);
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+
+.cart-summary-table{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-bottom: solid #e6e6e6 1px;
+    margin-bottom: 20px;
+}
+.cart-summary-detail{
+    display: flex;
+    justify-content: space-between;
+    margin: -5px 0px;
+}
+
+.cart-summary-detail:last-of-type{
+    border-top: solid #e6e6e6 1px;
+    margin-bottom: -30px;
+}
+.cart-summary-detail:last-of-type p{
+    font-weight: 700;
+}
+
+.cart-summary img{
+    width: 50%;
+}
+
+
+.cart-inputBox {
+    position: relative;
+    
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+.cart-inputBox input {
+    width: 95%;
+    height: 100%;
+    padding-left: 20px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    background-color: white;
+    color: black;
+
+    font-size: 22px;
+    font-weight: 700px;
+    letter-spacing: 0.5px;
+
+    text-align: justify 1px;
+
+}
+
+.cart-inputBox .cart-inputBox-effect {
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    pointer-events: none;
+    color: gray;
+    transition: 0.2s;
+
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.cart-inputBox input:not(:placeholder-shown)~.cart-inputBox-effect,
+.cart-inputBox input:focus~.cart-inputBox-effect {
+    color: black;
+    transform: translateX(-10px) translateY(-30px);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0 10px;
+    background-color: white;
+    font-family: var(--font-family);
+}
+
+
+.cart-inputBox .cart-inputBox-error {
+    color: red;
+    cursor: text;
+    text-decoration: none;
+    display: none;
+    margin-left: 15px;
+    margin-top: 2px;
+    font-size: 14px;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+.cart-inputBox .cart-inputBox-error:hover {
+    background-color: white;
+    color: red;
+    text-decoration: none;
+}
+
+
+.cart-inputBox input:invalid~.cart-inputBox-error {
+    display: block;
+}
+
+
+.cart-yourbag-item{
+    position: relative;
+    margin: 10px 0px;
+}
+.cart-yourbag-icon{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top:17%;
+    right: 0;
+
+
+}
+.cart-yourbag-icon_1{
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1;
+}
+
+.cart-yourbag-icon_1:hover{
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+
+}
+
+.cart-yourbag-item select {
+
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    position: absolute;
+    z-index: 1;
+    top: 70%;
+    left: 32%;
+
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 700;
+
+    border: solid black 2px;
+
+    cursor: pointer;
+}

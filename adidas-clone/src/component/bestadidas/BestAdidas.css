@@ -1,0 +1,30 @@
+.bestadidas{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.bestadidas-title{
+    padding: 0px 15px;
+    margin: 0 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bestadidas-title h2{
+    font-family: var(--font-family);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-bottom: 40px;
+}
+
+.bestadidas-card{
+    display: flex;
+    justify-content: space-around;
+}

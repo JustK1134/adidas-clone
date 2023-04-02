@@ -1,0 +1,84 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    padding-bottom: 75px;
+    cursor: pointer;
+    width: 22%;
+    margin: 5px 0px;
+
+}
+
+
+
+
+
+.card img{
+    width: 100%;
+    position: relative;
+}
+
+
+
+.card-price{
+    margin:0px;
+    margin-bottom: -20px;
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    padding: 2px 5px;
+    background-color: white;
+    width: fit-content;
+    position: relative;
+
+    left: 2%;
+    top: -8%;
+    
+    
+}
+
+.card-product{
+    margin:0px;
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 22px;
+
+    position: relative;
+
+}
+
+.card-categories{
+    margin: 0px;
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 22px;
+
+    color: gray;
+    position: relative;
+}
+
+.card-heart{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+}
+
+.card:hover .card-price {
+    top: -10%;
+    transition: 0.1s;
+}
+
+.card:hover {
+    outline: solid black;
+    outline-width: 1px;
+
+}
+

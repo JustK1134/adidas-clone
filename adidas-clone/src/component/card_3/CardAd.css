@@ -1,0 +1,63 @@
+.cardAd{
+    display: flexbox;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 22%;
+
+}
+
+ 
+.cardAd-image img{
+    width: 100%;
+    cursor: pointer;
+}
+
+.cardAd-image video{
+    width: 100%;
+    cursor: pointer;
+}
+
+.cardAd-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: -20px;
+    min-height: 160px;
+}
+.cardAd-content-title{
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 36px;
+    font-weight: 700;
+}
+
+.cardAd-content-description{
+    font-family: var(--font-family);
+    font-size: 13px;
+    line-height: 17px;
+    font-weight: 400;
+    color: gray;
+    margin-top: -10px;
+    min-height: 40px;
+}
+
+.cardAd-shopnow{
+    font-family: var(--font-family);
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: solid black underline;
+    margin-top:0;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.cardAd-shopnow:hover {
+    background-color: var(--primary-color-black);
+    color: var(--primary-color-white);
+    text-decoration: solid black underline;
+
+}

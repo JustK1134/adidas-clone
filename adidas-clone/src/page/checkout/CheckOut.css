@@ -1,0 +1,277 @@
+.checkout {
+    margin-top: 200px;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-bottom: 80px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.checkout-shipping {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 65%;
+
+}
+
+.checkout-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 30%;
+}
+
+.checkout h1 {
+    font-family: var(--font-family);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    text-transform: uppercase;
+    margin-top: -30px;
+}
+
+.checkout h2 {
+    font-family: var(--font-family);
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 40px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.checkout p {
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+
+}
+
+.checkout-shipping-double{
+    display: flex;
+
+    align-items: center;
+    width: 100%;
+}
+
+.checkout-shipping-double .checkout-inputBox:first-of-type{
+    margin-right: 124px;
+}
+.checkout-shipping-double .checkout-inputBox input{
+    width: 120%;
+}
+
+
+
+.checkout-inputBox {
+    position: relative;
+
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+.checkout-inputBox input {
+    width: 95%;
+    height: 100%;
+    padding-left: 20px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    background-color: white;
+    color: black;
+
+    font-size: 22px;
+    font-weight: 700px;
+    letter-spacing: 0.5px;
+
+    text-align: justify 1px;
+
+}
+
+.checkout-inputBox .checkout-inputBox-effect {
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    pointer-events: none;
+    color: gray;
+    transition: 0.2s;
+
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+.checkout-inputBox input:valid~.checkout-inputBox-effect,
+.checkout-inputBox input:focus~.checkout-inputBox-effect {
+    color: black;
+    transform: translateX(-10px) translateY(-30px);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 0 10px;
+    background-color: white;
+    font-family: var(--font-family);
+}
+
+
+
+.checkout-inputBox .checkout-inputBox-error {
+    color: red;
+    cursor: text;
+    text-decoration: none;
+    display: none;
+    margin-left: 15px;
+    margin-top: 2px;
+    font-size: 14px;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+.checkout-inputBox .checkout-inputBox-error:hover {
+    background-color: white;
+    color: red;
+    text-decoration: none;
+}
+
+
+.checkout-inputBox input:invalid~.checkout-inputBox-error {
+    display: block;
+}
+
+.checkout-checkbox-field {
+    padding: 20px 0;
+    padding-left: 40px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+.checkout-checkbox-field input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkout-checkmark {
+    position: absolute;
+    top: 15px;
+    left: 3px;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border: solid black 1px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-checkbox-field input:checked~.checkout-checkmark {
+    background-color: black;
+    color: white;
+}
+
+
+
+
+.checkout-checkbox-field .checkout-checkbox-error {
+    color: red;
+    cursor: text;
+    text-decoration: none;
+    display: block;
+    margin-left: 15px;
+    margin-top: 2px;
+    font-size: 14px;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+
+.checkout-checkbox-field .checkout-checkbox-error:hover {
+    background-color: white;
+    color: red;
+    text-decoration: none;
+}
+
+.checkout-checkbox-field input:valid .checkout-checkbox-error {
+    display: block;
+}
+
+.checkout-question{
+    position: relative;
+    margin-top: 30px;
+}
+.checkout-question-mark{
+    background-color: gray;
+    padding: 5px 15px;
+    width: fit-content;
+    margin-left: 10px;
+    top: -45px;
+    left: 200px;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+
+.checkout-delivery{
+    margin-bottom: 30px;
+    background-color: #e6e6e6 solid 1px;
+}
+
+.checkout-summary-table {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-bottom: solid #e6e6e6 1px;
+    margin-bottom: 20px;
+}
+
+.checkout-summary-detail {
+    display: flex;
+    justify-content: space-between;
+    margin: -5px 0px;
+}
+
+.checkou-summary-detail:last-of-type {
+    border-top: solid #e6e6e6 1px;
+    margin-bottom: -30px;
+}
+
+.checkout-summary-detail:last-of-type p {
+    font-weight: 700;
+}
+
+.checkout-summary img {
+    width: 50%;
+}
+.checkout-summary-detail-product{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 5px 0px;
+    border:#e6e6e6 solid 1px;
+}
+
+.checkout-summary-detail-product img{
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+}
+.checkout-summary-detail-product p{
+    font-size: 12px;
+    margin: 0px 0px;
+}

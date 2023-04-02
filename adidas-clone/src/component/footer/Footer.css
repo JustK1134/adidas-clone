@@ -1,0 +1,124 @@
+.footer-top{
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ede734;
+}
+
+.footer-top button {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-color-black);
+    padding: 5px 0;
+    box-shadow:
+        2px 2px 0 0px #ede734, 3px 3px 0 0px black;
+    color: white;
+}
+
+.footer-top button p{
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 20px;
+    padding: 0 10px ;
+}
+
+.footer-top button div{
+    padding: 0 10px;
+}
+
+.footer-top button:hover {
+    color: gray;
+    transition: 0.5s;
+}
+
+.footer-top h1{
+    font-family: var(--font-family);
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 32px;
+    margin-right: 40px;
+    margin-bottom: 15px;
+}
+
+
+.footer-middle{
+    margin: 0 210px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-middle-category{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-middle-category h2{
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-middle-category p{
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.footer-middle-category p:first-of-type {
+    margin-top: 0;
+}
+
+
+.footer-middle-category p:hover{
+    text-decoration: underline;
+}
+.footer-middle-category:last-of-type img{
+    max-width: 25px;
+    max-height: 25px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.bocongthuong{
+    max-width: 140px;
+    max-height:50px ;
+    cursor: pointer;
+}
+
+.footer-bottom{
+    background-color: #282C31;
+    color: #D3D7Da;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+.footer-bottom p {
+    padding: 0 15px;
+    margin: 15px 0px;
+    border-right: solid white 1px;
+    
+    font-family: var(--font-family);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    cursor: pointer;
+    opacity: 80%;
+}
+
+.footer-bottom p:last-of-type{
+    border: none;
+}

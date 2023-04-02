@@ -1,0 +1,14 @@
+.shop-main-template{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left:60px;
+
+    margin-top: 40px;
+
+}
+
+@media screen and(min-width: 2220px) {
+    .shop-main-template{
+        margin-left: 0px;
+    }
+}
