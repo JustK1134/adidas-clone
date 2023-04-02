@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-1x^9%mth&(d)vkc+s9qmak5j-eyzuth2^-=o(3y)mcrlz!3h49
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["muddled-car-production.up.railway.app"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
