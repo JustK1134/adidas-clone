@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const dropdown_content_women_feature = ['FEATURED','New Arrivals','Only at adidas', 'Member exclusive','This week\'s top sellers','_','Ultraboots', 'Stan Smith','Superstar','Adilette','Adizero']
 const dropdown_content_women_shoe = ['SHOES', 'Originals','Running','Training', 'Slides','Essential','Tennis','Sportwear']
@@ -15,7 +16,7 @@ const Navbar_dropdown_content_women = () => {
                 {dropdown_content_women_feature.map((item)=>{
                     return <div>
                         <p>
-                        {item}
+                        <Link to ='/shop/category/WOMEN' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
@@ -25,7 +26,7 @@ const Navbar_dropdown_content_women = () => {
                 {dropdown_content_women_shoe.map((item)=>{
                     return <div>
                         <p>
-                        {item}
+                        <Link to ='/shop/category/Women-Shoes' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
@@ -35,7 +36,7 @@ const Navbar_dropdown_content_women = () => {
                 {dropdown_content_women_clothing.map((item)=>{
                     return <div>
                         <p>
-                        {item}
+                        <Link to ='/shop/category/Women-Clothing' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
@@ -45,7 +46,7 @@ const Navbar_dropdown_content_women = () => {
                 {dropdown_content_women_accessories.map((item)=>{
                     return <div>
                         <p>
-                        {item}
+                        <Link to ='/shop/category/Women-Accessory' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
@@ -55,7 +56,7 @@ const Navbar_dropdown_content_women = () => {
                 {dropdown_content_women_sale.map((item)=>{
                     return <div>
                         <p>
-                        {item}
+                        <Link to ='/shop/category/WOMEN' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
@@ -65,7 +66,7 @@ const Navbar_dropdown_content_women = () => {
                 {dropdown_content_women_sport.map((item)=>{
                     return <div>
                         <p>
-                        {item}
+                        <Link to ='/shop/category/Women-Sport' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
@@ -74,12 +75,12 @@ const Navbar_dropdown_content_women = () => {
         </div>
 
         <div className='navbar-header-content-bot-categories-dropdown-content-bot' >
-            <p>ALL WOMEN's</p>
-            <p>ALL WOMEN's Shoes</p>
-            <p>ALL WOMEN's Clothing</p>
-            <p>ALL WOMEN's Accessories</p>
-            <p>ALL WOMEN's</p>
-            <p>ALL WOMEN's Sports</p>
+            <p><Link to ='/shop/category/WOMEN' className='click-able'>ALL WOMEN's</Link></p>
+            <p><Link to ='/shop/category/Women-Shoes' className='click-able'>ALL WOMEN's Shoes</Link></p>
+            <p><Link to ='/shop/category/Women-Clothing' className='click-able'>ALL WOMEN's Clothing</Link></p>
+            <p><Link to ='/shop/category/Women-Clothing' className='click-able'>ALL WOMEN's Accessories</Link></p>
+            <p><Link to ='/shop/category/WOMEN' className='click-able'>ALL WEMEN's</Link></p>
+            <p><Link to ='/shop/category/Women-Sport' className='click-able'>ALL WOMEN's Sports</Link></p>
         </div>
 
     </div>

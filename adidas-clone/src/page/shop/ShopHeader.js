@@ -3,21 +3,26 @@ import './Shop.css'
 import {AiOutlineRollback, AiOutlineFilter} from 'react-icons/ai'
 import Filter from './Filter'
 import { useState, useCallback } from 'react'
+import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const ShopHeader = ({data_header}) => {
+    let {category} = useParams()
     const [showFilter, SetShowFilter] = useState(false)
     const hideFilterFunction = useCallback(()=>{
         SetShowFilter(false)
     },[])
+
+    let navigate = useNavigate()
     
-  return (
+  return data_header && (
         <div className='shop-header'>
             <div className='shop-header-navigate-page'>
-                <h2>  <span> <AiOutlineRollback/> BACK</span>  <span>Home</span> / <span>{data_header.title}</span> / {data_header.division}</h2>
+                <h2>  <span onClick={() => navigate(-1)}> <AiOutlineRollback/> BACK</span>  <span onClick={() => navigate('/')}>Home</span> / <span>{category}</span> </h2>
             </div>
             <div className='shop-header-content'>
                 <div className='shop-header-title'>
-                    <h2>{data_header.title}'s {data_header.division}</h2>
+                    <h2>{data_header.title}</h2>
                     <p>[{data_header.quantity}]</p>
                 </div>
                 <div className='shop-header-description' >

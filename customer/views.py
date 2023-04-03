@@ -15,7 +15,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token = super().get_token(user)
 
         # Add custom claims
-        token['email'] = user.email
+        token['first_name'] =  Customer.objects.filter(user = user).values()[0]['first_name']
         # ...
 
         return token
@@ -38,3 +38,12 @@ def register(request, *args, **kwargs):
         print(request.data)
         return Response({"detail":"Welcome to the club, "+data['firstname']}, status=status.HTTP_201_CREATED)
     return Response({"detail":"something wrong"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+@api_view(['POST'])
+def get_customer(request,*args, **kwargs):
+    method = request.method
+    if method == 'POST':
+        data = request.data
+        cusomter_name = Customer.objects.filter(user = data['user_id']).values()[0]
+        print(cusomter_name['first_name'])
+        return Response(cusomter_name)

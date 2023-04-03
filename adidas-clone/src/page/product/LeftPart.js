@@ -13,18 +13,28 @@ import { useNavigate } from 'react-router-dom'
 
 const LeftPart = ({productData, sideBar, stopPosition}) => {
   const {product_id} = useParams()
-  let {user, authToken, logoutUser, HandleError} = useContext(AuthContext)
+  let {user, authToken, logoutUser, HandleError,} = useContext(AuthContext)
   const [cart, setCart] = useState()
+  const [navigateLogin, setNavigateLogin] = useState(false)
 
-  const handleUpdateCart = async (e) =>{
+  const handleLoginNavigate = () =>{
+    setNavigateLogin(true)
+    console.log(document.getElementById('pop-up-cart'))
+    if (document.getElementById('pop-up-cart') !==null){
+      document.getElementById('pop-up-cart').style.display = "flex"
+    }
+    
+  }
+
+  const handleUpdateCart = async () =>{
     if (size === 'no size select'){
       setToggleSizeValidation(true)
       console.log(size)
       return null
     }
 
-    e.preventDefault()
-    const response = await fetch('http://127.0.0.1:8000/api/cart/',{
+
+    const response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/',{
       method: 'POST',
       headers: {
         'Content-Type':'application/json',
@@ -43,7 +53,7 @@ const LeftPart = ({productData, sideBar, stopPosition}) => {
   }
 
   const getpopUpCartData = async () => {
-    let response = await fetch('http://127.0.0.1:8000/api/cart/',{
+    let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/',{
       method: 'GET',
       headers: {
         'Content-Type':'application/json',
@@ -195,7 +205,7 @@ const LeftPart = ({productData, sideBar, stopPosition}) => {
         <div className='product-template-left-button'>
           {/* onClick={handleUpdateCart} */}
           {/* onClick={()=>{document.getElementById('pop-up-cart').style.display = "flex"; document.getElementById('pop-up-cart').style.justifyContent = "center"}} */}
-          <button className='product-template-left-button-add-bag' onClick={handleUpdateCart}>
+          <button className='product-template-left-button-add-bag' onClick={()=>{if(user){handleUpdateCart()}else{handleLoginNavigate()}}}>
             <p>ADD TO BAG</p>
             <div className='button-arrow'>
               <HiOutlineArrowNarrowRight size='3rem'  />
@@ -219,7 +229,7 @@ const LeftPart = ({productData, sideBar, stopPosition}) => {
           <p>Find out when to order to get before Lunar New Year</p>
         </div>
         
-        {cart &&
+        {((!user && navigateLogin) || cart) &&
         <div className='pop-up-cart' id='pop-up-cart' >
           <PopUpBag size={size} image={productData.main_image} productname = {productData.productname} price = {productData.price} color = {productData.color} cart={cart}   />
         </div>

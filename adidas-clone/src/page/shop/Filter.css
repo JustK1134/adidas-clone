@@ -3,7 +3,7 @@
     overflow-y: scroll;
     top: 0px;
     right:0px;
-    z-index: 11;
+    z-index: 21;
     transition: 1s;
     background-color: white;
     width: 30%;
@@ -19,7 +19,7 @@
     position: fixed;
     top:0px;
     right:-40%;
-    z-index: 11;
+    z-index: 21;
     transition: 1s;
     width: 30%;
     height: 100vh;

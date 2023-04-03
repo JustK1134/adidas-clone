@@ -25,7 +25,7 @@ const ProductTemplate = () => {
 
   const [productData, setProductData] =useState()
   const getProductData = async ()=>{
-    let response = await fetch(`http://127.0.0.1:8000/api/shop/product/${product_id}/`)
+    let response = await fetch(`khoiluc-portfolio-adidas-clone.up.railway.app/api/shop/product/${product_id}/`)
     let fetch_data = await response.json()
     if (response.status === 200){
       console.log('FETCH_DATA: ', fetch_data[0])
@@ -49,12 +49,16 @@ const ProductTemplate = () => {
 
 
   const [sideBar, setSideBar] =useState(false)
-  const [stopPosition, setStopPosition] =useState('empty')
+  const [stopPosition, setStopPosition] =useState()
 
   const controlSideBar =() =>{
     let element_left = document.getElementById('left')
     let element_right = document.getElementById('right')
-        if (typeof window !== 'undefined'){
+    if (element_right === null){
+      setStopPosition('empty')
+    }
+    console.log(element_right)
+        if (typeof window !== 'undefined' && element_right !== null){
             if (element_right.scrollHeight - window.scrollY < 460){
               setSideBar(true)
               
@@ -71,6 +75,7 @@ const ProductTemplate = () => {
 
             }
         }
+      
         // console.log("scrolling to:",Math.round(window.scrollY  * 100) / 100)
         
         // console.log("left: ",element_left.scrollHeight)
@@ -79,12 +84,13 @@ const ProductTemplate = () => {
     }
     
     useEffect(()=>{
-        if(typeof window !== 'undefined'){
+        if(typeof (window) !== 'undefined'){
+            console.log(productData === undefined)
             
             window.addEventListener('scroll', controlSideBar,true);
 
         }
-        return () => window.removeEventListener('scroll', controlSideBar, true);
+        return () =>  {window.removeEventListener('scroll', controlSideBar, true)};
     },[stopPosition])
 
   return (

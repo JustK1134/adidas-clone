@@ -49,7 +49,7 @@ const CheckOut = () => {
 
     const handleCheckoutSubmit = async (e) =>{
         e.preventDefault()
-        let response = await fetch('http://127.0.0.1:8000/api/cart/checkout/',{
+        let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/checkout/',{
             method: 'POST',
             headers: {
                 'Content-Type':'application/json',
@@ -74,7 +74,7 @@ const CheckOut = () => {
 
 
     const getCartData = async () => {
-        let response = await fetch('http://127.0.0.1:8000/api/cart/checkout/',{
+        let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/checkout/',{
             method: 'GET',
             headers: {
                 'Content-Type':'application/json',

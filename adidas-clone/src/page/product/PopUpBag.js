@@ -4,9 +4,13 @@ import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
 import CardProduct2 from '../../component/card_2/CardProduct2'
 import {RxCross1} from 'react-icons/rx'
 import { Link, useNavigate } from 'react-router-dom'
+import AuthContext from '../../context/AuthContext'
+import { useContext } from 'react'
 
 const PopUpBag = ({size,image, productname, price, color, cart}) => {
-  return (
+    let {user} = useContext(AuthContext)
+    console.log(user)
+  return user ? (
     <div className='pop-up-bag-content'>
         <div className='pop-up-bag-close' onClick={()=>document.getElementById('pop-up-cart').style.display = 'none'}><RxCross1 size='2rem'/></div>
         <div className='pop-up-bag-content-header'>
@@ -57,7 +61,36 @@ const PopUpBag = ({size,image, productname, price, color, cart}) => {
                 <div onClick={()=>{console.log('hello')}}> <CardProduct2 image = "https://assets.adidas.com/images/w_276,h_276,f_auto,q_auto,fl_lossy,c_fill,g_auto/4c6ae91f16354f0a9041a9d300d8884e_9366/EE1151_03_standard.jpg" price='350,000' product='Sock' categories= 'Women Originals' /></div>
                 
             </div>
+        </div> 
+    </div>
+  ) : (
+    <div className='pop-up-bag-content'>
+        <div className='pop-up-bag-close' onClick={()=>document.getElementById('pop-up-cart').style.display = 'none'}><RxCross1 size='2rem'/></div>
+        <div className='pop-up-bag-navigate'>
+            <div className='pop-up-bag-content-header'>
+                <h5>Log in to have better shopping experience with Us! </h5>
+            </div>        
+            <Link className='pop-up-bag-link' to='/login'>
+                <button className='pop-up-bag-button-viewbag'>
+                    <p>LOGIN</p>
+                    <div className='button-arrow'>
+                        <HiOutlineArrowNarrowRight size='3rem'  />
+                    </div>
+                </button>
+            </Link>
+            <div className='pop-up-bag-content-header'>
+                <h5>Join adiclub now! </h5>
+            </div>        
+            <Link className='pop-up-bag-link' to='/register'>
+                <button className='pop-up-bag-button-viewbag'>
+                    <p>SIGNUP</p>
+                    <div className='button-arrow'>
+                        <HiOutlineArrowNarrowRight size='3rem'  />
+                    </div>
+                </button>
+            </Link>
         </div>
+
     </div>
   )
 }

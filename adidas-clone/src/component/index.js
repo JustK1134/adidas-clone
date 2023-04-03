@@ -42,3 +42,4 @@ export {default as WhatHotTemplate} from './what_hot/WhatHotTemplate'
 export {default as Card5} from './card_5/Card5'
 export {default as Card6} from './card_6/Card6'
 export {header_icon_vn_flag}
+export {default as ScrollTop} from './scrolltop/ScrollTop'

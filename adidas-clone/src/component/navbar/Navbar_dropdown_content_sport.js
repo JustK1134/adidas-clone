@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 const dropdown_content_sport_football_img = "https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enVN/Images/football-nav-img_tcm212-843786.jpg"
 const dropdown_content_sport_running_img = "https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enVN/Images/Navi_Header_tcm212-996539.jpg"
 const dropdown_content_sport_basketball_img = "https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enVN/Images/chapter2bballnavi_tcm212-843792.png"
@@ -18,7 +20,7 @@ const Navbar_dropdown_content_sport = () => {
             <div className='dropdown-content'>
                 {dropdown_content_sport_football.map((item,index)=>{
                     return <div>
-                        {index === 1 ? <img src={item}  alt = 'navbar-football'/>  : <p>{item}</p>}
+                        {index === 1 ? <img src={item}  alt = 'navbar-football'/>  : <p><Link to ='/shop' className='click-able'>{item}</Link></p>}
                     <div/>
                     </div>
                 })}
@@ -26,7 +28,7 @@ const Navbar_dropdown_content_sport = () => {
             <div className='dropdown-content'>
                 {dropdown_content_sport_running.map((item,index)=>{
                     return <div>
-                        {index === 1 ? <img src={item} alt = 'navbar-running'/>  : <p>{item}</p>}
+                        {index === 1 ? <img src={item} alt = 'navbar-running'/>  : <p><Link to ='/shop' className='click-able'>{item}</Link></p>}
                     <div/>
                     </div>
                 })}
@@ -34,7 +36,7 @@ const Navbar_dropdown_content_sport = () => {
             <div className='dropdown-content'>
                 {dropdown_content_sport_basketball.map((item,index)=>{
                     return <div>
-                        {index === 1 ? <img src={item}  alt = 'navbar-basketball'/>  : <p>{item}</p>}
+                        {index === 1 ? <img src={item}  alt = 'navbar-basketball'/>  : <p><Link to ='/shop' className='click-able'>{item}</Link></p>}
                     <div/>
                     </div>
                 })}
@@ -42,7 +44,7 @@ const Navbar_dropdown_content_sport = () => {
             <div className='dropdown-content'>
                 {dropdown_content_sport_training.map((item,index)=>{
                     return <div>
-                        {index === 1 ? <img src={item} alt = 'navbar-training' />  : <p>{item}</p>}
+                        {index === 1 ? <img src={item} alt = 'navbar-training' />  : <p><Link to ='/shop' className='click-able'>{item}</Link></p>}
                     <div/>
                     </div>
                 })}
@@ -51,7 +53,7 @@ const Navbar_dropdown_content_sport = () => {
                 {dropdown_content_sport_other.map((item)=>{
                     return <div>
                         <p>
-                        {item}
+                        <Link to ='/shop' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
@@ -59,11 +61,11 @@ const Navbar_dropdown_content_sport = () => {
             </div>
         </div>
         <div className='navbar-header-content-bot-categories-dropdown-content-bot'>
-            <p>All Football</p>
-            <p>All Running</p>
-            <p>All Basketball</p>
-            <p>All Training</p>
-            <p>All Other Sport</p>
+            <p><Link to ='/shop' className='click-able'>All Football</Link></p>
+            <p><Link to ='/shop' className='click-able'>All Running</Link></p>
+            <p><Link to ='/shop' className='click-able'>All Basketball</Link></p>
+            <p><Link to ='/shop' className='click-able'>All Training</Link></p>
+            <p><Link to ='/shop' className='click-able'>All Other Spor</Link>t</p>
         </div>
     </div>
   )

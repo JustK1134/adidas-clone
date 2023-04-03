@@ -2,6 +2,7 @@ import React from 'react'
 import './Footer.css'
 import {HiOutlineArrowNarrowRight} from 'react-icons/hi'
 import {BsCCircle} from 'react-icons/bs'
+import { useNavigate } from 'react-router-dom'
 
 const footer_icon_facebook = "https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/viVN/Images/NEWfacebook_image_footer_tcm337-875964.png"
 const footer_icon_instagram = "https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/viVN/Images/NEWinstagram_logo-footer_tcm337-875968.png"
@@ -12,11 +13,12 @@ const footer_icon_youtube = "https://brand.assets.adidas.com/image/upload/f_auto
 const footer_icon_bo_cong_thuong = "https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enVN/Images/vn_footer_logo_tcm212-852364.jpg"
 
 const Footer = () => {
+    let navigate = useNavigate()
   return (
     <div className='footer'>
         <div className='footer-top'>
             <h1>BECOME A MEMBER & GET 15% OFF</h1>
-            <button>
+            <button onClick={()=>{navigate('/register')}}>
                 <p>SIGN UP FOR FREE</p>
                 <div><HiOutlineArrowNarrowRight size='2rem'/></div>
             </button>

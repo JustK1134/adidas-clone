@@ -4,6 +4,7 @@ import {AiOutlineRollback} from 'react-icons/ai'
 import {MdOutlineExpandLess, MdOutlineExpandMore} from 'react-icons/md'
 import { small_image_1 } from '../shop/Data'
 import { useState, useRef, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { Slide } from 'react-slideshow-image'
 import CardProduct2 from '../../component/card_2/CardProduct2'
@@ -18,6 +19,7 @@ const info_detail_data =['Regular fit',"Weight:293g","Lace closure","Midsole dro
 const faq_data = [{no:0,question:'What is Ultraboost',answer:'Ultraboost Light is the lightest Ultraboost shoe to date. It is a neutral running shoe offering the ultimate cushioned and responsive experience. Its heightened level of comfort and style means the shoe has a versatility that can take its use case beyond the run.'},{no:1,question:'How was the Ultraboost Light midsole produced?',answer:'For many runners, it’s the BOOST midsole that make Ultraboost their go-to shoe for runs where endurance is top priority. Each tiny capsule within the midsole works together to deliver epic energy in every stride. The new Light BOOST material is 30% lighter than the previous BOOST compound, making Ultraboost Light the lightest Ultraboost ever!'},{no:2,question:'What does Energy Return mean?',answer:'The magic lies in the Light BOOST midsole, a new generation of adidas BOOST with even more energy return. Its unique molecule design achieves the lightest BOOST foam to date. The linear energy point delivers a high level of responsiveness as the foot transitions through the gait cycle.'},{no:3,question:'What is the Ultraboost Light used for?',answer:'Ultraboost Light footwear is designed for running first and foremost.&nbsp;Just like previous versions, Ultraboost Light is the product of several rounds of rigorous wear tests by athletes who need top performance from their running footwear.&nbsp;The lightweight outsole provides grip for all kinds of weather and surfaces, and enough flexibility to move in harmony with the midsole for a smooth, secure stride.'},{no:4,question:'What does 10% lower carbon footprint than previous Ultraboost mean?',answer:"From raw material extraction, processing, and packaging, all the way to the end of the product's life, we calculate and communicate its carbon footprint, conforming to an internationally recognized standard: ISO 14067. To reduce our footprint, we need to measure it. The concise footprint results made available to you, cover the complete lifecycle of the product. This is just one of our initiatives to help reduce our footprint."}]
 
 const RightPart = ({productData, defaulFaqState}) => {
+  let navigate = useNavigate()
 
   const [showMoreImage, setShowMoreImage] = useState(false)
   const [showHightLights, setShowHighLights] = useState(false)
@@ -53,8 +55,8 @@ const RightPart = ({productData, defaulFaqState}) => {
     <div id ='right' className='product-template-right'>
         <div className='product-template-right-header'>
           <div className='product-template-right-header-navigation'>
-            <div><AiOutlineRollback/> <span>Back</span>  </div>
-            <p><span>Home</span> / <span>Running</span> / <span>Shoes</span></p>
+            <div><AiOutlineRollback/> <span onClick={()=>{navigate(-1)}}>Back</span>  </div>
+            <p><span onClick={()=>{navigate('/')}}>/Home</span></p>
           </div>
 
           <div className='product-template-right-header-inital-image'>
@@ -82,7 +84,7 @@ const RightPart = ({productData, defaulFaqState}) => {
         <div className='product-template-right-color'>
           <p>{productData.sublink.length} colors available</p>
           <div>
-            {productData.sublink.map((item)=>{return <img src ={item.small_img} alt={item.small_img} className='product-template-right-color-small-image'/>})}
+            {productData.sublink.map((item)=>{return <img onClick={()=>{navigate(item.small_link)}} src ={item.small_img} alt={item.small_img} className='product-template-right-color-small-image'/>})}
           </div>
         </div>
         }

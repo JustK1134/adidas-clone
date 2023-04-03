@@ -16,6 +16,7 @@ const Shop = () => {
 
 
   const [shopData, setShopData] = useState()
+  const [shopHeaderData, setShopHeaderData] = useState()
   let {HandleError} = useContext(AuthContext)
   let navigate = useNavigate()
 
@@ -25,11 +26,12 @@ const Shop = () => {
 
   const getShopData = async () =>{
 
-    let response = await fetch('http://127.0.0.1:8000/api/shop/')
+    let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/shop/')
     let fetch_data = await response.json()
     if (response.status === 200){
       console.log('FETCH_DATA: ', fetch_data)
-      setShopData(fetch_data)
+      setShopData(fetch_data.data)
+      setShopHeaderData(fetch_data.data_header)
       HandleError({status: response.status, detail:'no error'})
     }
     else{
@@ -48,7 +50,7 @@ const Shop = () => {
 
   return (
     <div className='shop'>
-        <ShopHeader data_header={data_header}/>
+        <ShopHeader data_header={shopHeaderData}/>
         <ShopMainTemplate shopData={shopData}/>
         
     </div>

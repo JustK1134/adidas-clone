@@ -201,7 +201,7 @@ const Filter = ({showFilter, hideFilterFunction}) => {
         console.log("price range:",priceRange)
         filterListModified.price = priceRange
 
-        let response = await fetch('http://127.0.0.1:8000/api/shop/filter',{
+        let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/shop/filter',{
             method: 'POST',
             headers: {
                 'Content-Type':'application/json',

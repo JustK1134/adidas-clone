@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 const dropdown_content_outlet_brand = ['BRANDS','Originals','Running','Football','Golf']
@@ -11,40 +12,40 @@ const Navbar_dropdown_content_outlet = () => {
     <div className='navbar-header-content-bot-categories-dropdown-content'>
         <div className='navbar-header-content-bot-categories-dropdown-content-top'>
             <div className='dropdown-content'>
-                {dropdown_content_outlet_brand.map((item)=>{
-                    return <div>
+                {dropdown_content_outlet_brand.map((item,index)=>{
+                    return <div key ={index}>
                         <p>
-                        {item}
+                        <Link to ='/shop' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
                 })}
             </div>
             <div className='dropdown-content'>
-                {dropdown_content_outlet_men.map((item)=>{
-                    return <div>
+                {dropdown_content_outlet_men.map((item, index)=>{
+                    return <div key ={index}>
                         <p>
-                        {item}
+                        <Link to ='/shop' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
                 })}
             </div>
             <div className='dropdown-content'>
-                {dropdown_content_outlet_women.map((item)=>{
-                    return <div>
+                {dropdown_content_outlet_women.map((item,index)=>{
+                    return <div key ={index}>
                         <p>
-                        {item}
+                        <Link to ='/shop' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
                 })}
             </div>
             <div className='dropdown-content'>
-                {dropdown_content_outlet_kid.map((item)=>{
-                    return <div>
+                {dropdown_content_outlet_kid.map((item, index)=>{
+                    return <div key ={index}>
                         <p>
-                        {item}
+                        <Link to ='/shop' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>

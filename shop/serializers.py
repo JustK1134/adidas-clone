@@ -15,7 +15,7 @@ class ShopSerializer(serializers.ModelSerializer):
 
 
     def get_mainlink(self,obj):
-        return f"http://127.0.0.1:8000/#/shop/product/{obj.id}"
+        return f"/shop/product/{obj.id}"
 
 
     
@@ -23,7 +23,7 @@ class ShopSerializer(serializers.ModelSerializer):
         new_sublink_array = []
         queryset = Shop.objects.filter(productname = obj.productname).values()
         for x in list(queryset):
-            new_sublink_array.append({'small_link':f"http://127.0.0.1:8000/#/shop/product/{x['id']}",'small_img':x['small_image_1'], 'big_img':x['main_image']})
+            new_sublink_array.append({'small_link':f"/shop/product/{x['id']}",'small_img':x['small_image_1'], 'big_img':x['main_image']})
         return new_sublink_array
     
     def get_product_image_initial(self,obj):

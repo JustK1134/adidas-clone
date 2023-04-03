@@ -62,7 +62,7 @@ class ShopInfo(models.Model):
     info_hightlight_img_2 = models.CharField(max_length=300, default= None)
     info_hightlight_img_3 = models.CharField(max_length=300, default= None)
 
-    info_description_text_1 = models.CharField(max_length=300, default= None)
+    info_description_text_1 = models.CharField(max_length=500, default= None)
     info_description_title_1 = models.CharField(max_length=300, default= None)
     info_description_img_1 = models.CharField(max_length=300, default= None)
 
@@ -90,6 +90,11 @@ class ShopInfo(models.Model):
     info_faq_answer_3 = models.CharField(max_length=300, default= None)
     info_faq_answer_4 = models.CharField(max_length=300, default= None)
     info_faq_answer_5 = models.CharField(max_length=300, default= None)
+
+class CategoryInfo(models.Model):
+    division = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)
+    description = models.CharField(max_length=300)
 
 
 

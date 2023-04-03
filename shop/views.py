@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Shop
+from .models import Shop, CategoryInfo
 from .serializers import ShopSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -15,7 +15,10 @@ def product_query(request, *args, **kwargs):
             print("all")
             queryset = Shop.objects.all()
             data = ShopSerializer(queryset, many = True).data
-            return Response(data, status=status.HTTP_200_OK)
+            data_header = CategoryInfo.objects.filter(division = 'MEN').values()[0]
+            data_header['quantity']= len(data)
+
+            return Response({"data_header":data_header, "data":data}, status=status.HTTP_200_OK)
         elif len(kwargs) > 0:
             product_id = kwargs['product_id']
             # object = Shop.objects.filter(small_id_1 = product_id)
@@ -91,3 +94,27 @@ def product_search(request, *args, **kwargs):
             return Response({"detail":"No product found. Search again"}, status=status.HTTP_404_NOT_FOUND)
         return Response(list_item,status=status.HTTP_200_OK)
     return Response({"detail":"Method not allow"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+
+@api_view(['GET'])
+def category_query(request, *args, **kwargs):
+
+    full_division = ['Shoes', 'Clothing', 'Accessory']
+    full_sport = ['Lifestyle', 'Running', 'Training', 'Basketball']
+
+
+    method = request.method
+    category_list =[]
+    if method == 'GET':
+        if len(kwargs) > 0:
+            category = kwargs['category']
+            split = category.split("-")
+            category_list.append(split[1] if len(split) > 1 else split[0])
+            data_header = CategoryInfo.objects.filter(division = category).values()
+            print(len(list(data_header)))
+            if len(list(data_header)) == 0:
+                return Response({"detail":"No product found"},status=status.HTTP_404_NOT_FOUND)
+            data_header = data_header[0]
+            data_product_query = Shop.objects.filter(division__in = category_list if category_list[0] in full_division  else full_division)
+            data_product = ShopSerializer(data_product_query, many = True).data
+            data_header['quantity'] = len(data_product)
+            return Response({"data_header":data_header, "data_product":data_product}, status=status.HTTP_200_OK)            

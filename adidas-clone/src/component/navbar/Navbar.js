@@ -27,7 +27,7 @@ const Navbar = () => {
     const [show, setShow] =useState(false)
     const [lastScrollY, setLastScrollY] = useState(0)
     const [search, setSearch] = useState()
-    let {logoutUser, HandleError, handleSearchData} = useContext(AuthContext)
+    let {logoutUser, HandleError, handleSearchData, customerFirstName, user} = useContext(AuthContext)
     let navigate = useNavigate()
 
     const controlNavbar =() =>{
@@ -54,7 +54,7 @@ const Navbar = () => {
 
     const handleSearch = async () =>{
         console.log("search:",search)
-        let response = await fetch('http://127.0.0.1:8000/api/shop/search',{
+        let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/shop/search',{
             method: 'POST',
             headers: {
                 'Content-Type':'application/json',
@@ -84,9 +84,18 @@ const Navbar = () => {
                 <p>help</p>
                 <p><Link to='/ordertracking' className='click-able'>order tracker</Link></p>
                 <p><Link to='/register' className='click-able'>become a member</Link></p>
-                <p><Link to='/register' className='click-able'>adiclub</Link></p>
-                <p><Link to='/login' className='click-able'>login</Link></p>
-                <p onClick={()=>{logoutUser()}}>logout</p>
+                {user ? (
+                    <>
+                        <p style={{fontWeight: "700", textDecoration: "underline"}}>Welcome {customerFirstName}</p>
+                        <p onClick={()=>{logoutUser()}}>logout</p>
+                    </> 
+                ):
+                <>
+                    <p><Link to='/register' className='click-able'>adiclub</Link></p>
+                    <p><Link to='/login' className='click-able'>login</Link></p>
+                </>}
+
+
                 <div className='navbar-header-content-top-language'>
                     <img src ={header_icon_vn_flag} alt='vn flag'></img>
                 </div>
@@ -104,7 +113,7 @@ const Navbar = () => {
                     </div>
                     
                     <div className='navbar-header-content-bot-categories-hover'>
-                        <p className="navbar-bold"><Link to ='/shop' className='click-able'>WOMEN</Link></p>
+                        <p className="navbar-bold"><Link to ='/shop/category/WOMEN' className='click-able'>WOMEN</Link></p>
                         <div className='line'/>
                         <Navbar_dropdown_content_women/>
                     </div>

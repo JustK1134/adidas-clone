@@ -478,3 +478,12 @@
     color: white;
     transition: 0.3s;
 }
+
+.pop-up-bag-navigate{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    position: relative;
+    top: 10%
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const dropdown_content_brands_originals_img = "https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enVN/Images/Originals_Brand_Nav_Image_tcm212-843840.jpg"
 const dropdown_content_brands_sportwear_img = "https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enVN/Images/TIRO_SUIT_UP_AVRYN_SS23_Onsite_Navigator_tcm212-927866.jpg"
@@ -15,7 +16,7 @@ const Navbar_dropdown_content_brand = () => {
             <div className='dropdown-content'>
                 {dropdown_content_brands_originals.map((item,index)=>{
                     return <div>
-                        {index === 1 ? <img className='navbar-brand-image' src={item} alt = 'navbar-original'/>  : <p>{item}</p>}
+                        {index === 1 ? <img className='navbar-brand-image' src={item} alt = 'navbar-original'/>  : <p><Link to ='/shop' className='click-able'>{item}</Link></p>}
                     <div/>
                     </div>
                 })}
@@ -23,7 +24,7 @@ const Navbar_dropdown_content_brand = () => {
             <div className='dropdown-content'>
                 {dropdown_content_brands_sportwear.map((item,index)=>{
                     return <div>
-                        {index === 1 ? <img className='navbar-brand-image' src={item} alt = 'navbar-sportwear'/>  : <p>{item}</p>}
+                        {index === 1 ? <img className='navbar-brand-image' src={item} alt = 'navbar-sportwear'/>  : <p><Link to ='/shop' className='click-able'>{item}</Link></p>}
                     <div/>
                     </div>
                 })}
@@ -31,7 +32,7 @@ const Navbar_dropdown_content_brand = () => {
             <div className='dropdown-content'>
                 {dropdown_content_brands_plastic.map((item,index)=>{
                     return <div>
-                        {index === 1 ? <img className='navbar-brand-image' src={item} alt = 'navbar-plastic'/>  : <p>{item}</p>}
+                        {index === 1 ? <img className='navbar-brand-image' src={item} alt = 'navbar-plastic'/>  : <p><Link to ='/shop' className='click-able'>{item}</Link></p>}
                     <div/>
                     </div>
                 })}
@@ -39,9 +40,9 @@ const Navbar_dropdown_content_brand = () => {
         </div>
 
         <div className='navbar-header-content-bot-categories-dropdown-content-bot'>
-            <p>All adidas Originals</p>
-            <p>All Sportwear</p>
-            <p>All Sustainable</p>
+            <p><Link to ='/shop' className='click-able'>All adidas Originals</Link></p>
+            <p><Link to ='/shop' className='click-able'>All Sportwear</Link></p>
+            <p><Link to ='/shop' className='click-able'>All Sustainable</Link></p>
         </div>
 
     </div>

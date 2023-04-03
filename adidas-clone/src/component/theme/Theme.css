@@ -51,6 +51,7 @@
     padding: 15px 0;
     box-shadow:
     2px 2px 0 0px white, 3px 3px 0 0px black;
+    cursor: pointer;
 }
 
 .theme-poster-container_1 button:hover p{
@@ -137,6 +138,7 @@
         2px 2px 0 0px white, 3px 3px 0 0px black;
 
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .theme-poster-container_2 button:hover p {

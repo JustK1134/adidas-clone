@@ -43,7 +43,7 @@ const Register = () => {
             console.log("validate fail")
             return null
         }
-        let response = await fetch('http://127.0.0.1:8000/api/authentication/token/register/',{
+        let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/authentication/token/register/',{
             method: 'POST',
             headers: {
                 'Content-Type':'application/json',

@@ -11,6 +11,7 @@ export default AuthContext;
 export const AuthProvider = ({children}) =>{
     
     let [loading, setLoading] = useState(true)
+    let [customerFirstName, setCustomerFirstName] = useState()
     
     let [user, setUser] = useState(()=> localStorage.getItem('authTokens') ? jwt_decode(localStorage.getItem('authTokens')) : null)
     let [authToken, setAuthToken] = useState(()=>localStorage.getItem('authTokens') ? JSON.parse(localStorage.getItem('authTokens')) : null)
@@ -21,7 +22,7 @@ export const AuthProvider = ({children}) =>{
     let loginUser = async (e) => {
         e.preventDefault()
 
-        let response = await fetch('http://127.0.0.1:8000/api/authentication/token/', {
+        let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/authentication/token/', {
             method : 'POST',
             headers : {
                 'Content-Type': 'application/json',
@@ -35,8 +36,10 @@ export const AuthProvider = ({children}) =>{
             console.log(response.status)
             setAuthToken(data)
             setUser(jwt_decode(data.access))
-            console.log(user)
+            // console.log(jwt_decode(data.access).user_id)
             localStorage.setItem('authTokens',JSON.stringify(data))
+            // console.log("return data:", customer_name)
+            setCustomerFirstName(jwt_decode(data.access).first_name)
             navigate('/')
         }else{
             alert('something went wrong')
@@ -55,7 +58,7 @@ export const AuthProvider = ({children}) =>{
  
         
 
-        let response = await fetch('http://127.0.0.1:8000/api/authentication/token/refresh/', {
+        let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/authentication/token/refresh/', {
             method : 'POST',
             headers : {
                 'Content-Type': 'application/json',
@@ -68,6 +71,7 @@ export const AuthProvider = ({children}) =>{
             console.log("update token")
             setAuthToken(data)
             setUser(jwt_decode(data.access))
+            setCustomerFirstName(jwt_decode(data.access).first_name)
             console.log(user)
             localStorage.setItem('authTokens',JSON.stringify(data))
         }else{
@@ -128,6 +132,7 @@ export const AuthProvider = ({children}) =>{
         filterData: filterData,
         searchHeader:searchHeader,
         filterHeader:filterHeader,
+        customerFirstName:customerFirstName,
 
 
     }

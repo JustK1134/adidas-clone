@@ -1,5 +1,7 @@
 import React from 'react'
 import './Navbar.css'
+import { Link } from 'react-router-dom'
+
 const dropdown_content_men_feature = ['FEATURED','New Arrivals','Only at adidas', 'Member exclusive','This week\'s top sellers','_','Ultraboots', 'Stan Smith','Superstar','Adilette','Adizero']
 const dropdown_content_men_shoe = ['SHOES','New Arrivals','Originals','Football','Running','Training','Essentials','Outdoor', 'Basketball','Slides','Sportwear']
 const dropdown_content_men_clothing = ['CLOTHING','T-SHIRTS & Polos','Jerseys','Hoodies & Jackets','Sweatshirts & Tracksuits','Pants','Tights', 'Shorts','Compression Layers','Sportwears']
@@ -16,7 +18,7 @@ const Navbar_dropdown_content_men = () => {
                 {dropdown_content_men_feature.map((item)=>{
                     return <div>
                         <p>
-                        {item}
+                        <Link to ='/shop' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
@@ -26,7 +28,7 @@ const Navbar_dropdown_content_men = () => {
                 {dropdown_content_men_shoe.map((item)=>{
                     return <div>
                         <p>
-                        {item}
+                        <Link to ='/shop/category/Men-Shoes' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
@@ -36,7 +38,7 @@ const Navbar_dropdown_content_men = () => {
                 {dropdown_content_men_clothing.map((item)=>{
                     return <div>
                         <p>
-                        {item}
+                        <Link to ='/shop/category/Men-Clothing' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
@@ -46,7 +48,7 @@ const Navbar_dropdown_content_men = () => {
                 {dropdown_content_men_accessories.map((item)=>{
                     return <div>
                         <p>
-                        {item}
+                        <Link to ='/shop/category/Men-Accessory' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
@@ -56,7 +58,7 @@ const Navbar_dropdown_content_men = () => {
                 {dropdown_content_men_sale.map((item)=>{
                     return <div>
                         <p>
-                        {item}
+                        <Link to ='/shop' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
@@ -66,7 +68,7 @@ const Navbar_dropdown_content_men = () => {
                 {dropdown_content_men_sport.map((item)=>{
                     return <div>
                         <p>
-                        {item}
+                        <Link to ='/shop/category/Men-Sport' className='click-able'>{item}</Link>
                     </p>
                     <div/>
                     </div>
@@ -75,12 +77,12 @@ const Navbar_dropdown_content_men = () => {
         </div>
 
         <div className='navbar-header-content-bot-categories-dropdown-content-bot'>
-            <p>ALL MEN's</p>
-            <p>ALL MEN's Shoes</p>
-            <p>ALL MEN's Clothing</p>
-            <p>ALL MEN's Accessories</p>
-            <p>ALL MEN's</p>
-            <p>ALL MEN's Sports</p>
+            <p><Link to ='/shop' className='click-able'>ALL MEN's</Link></p>
+            <p><Link to ='/shop/category/Men-Shoes' className='click-able'>ALL MEN's Shoes</Link></p>
+            <p><Link to ='/shop/category/Men-Clothing' className='click-able'>ALL MEN's Clothing</Link></p>
+            <p><Link to ='/shop/category/Accessory' className='click-able'>ALL MEN's Accessories</Link></p>
+            <p><Link to ='/shop' className='click-able'>ALL MEN's</Link></p>
+            <p><Link to ='/shop/category/Men-Sport' className='click-able'>ALL MEN's Sports</Link></p>
         </div>
     </div>
   )

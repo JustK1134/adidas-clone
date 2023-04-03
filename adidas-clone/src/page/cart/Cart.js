@@ -8,21 +8,24 @@ import AuthContext from '../../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
 
 
-const data_cart_item_1 = {product:'Ultraboost light shoes', color:'Cloud white', size:'12 UK', price:5200000, image:'https://assets.adidas.com/images/w_280,h_280,f_auto,q_auto:sensitive/0fbed4646c1d46e0aae0af6901301ff4_9366/HQ6351_700_HQ6351_01_standard.jpg.jpg?sh=364&strip=false&sw=364'}
-const data_cart_item_2 = {product:'Ultraboost light shoes', color:'Cloud white', size:'12 UK', price:5200000, image:'https://assets.adidas.com/images/w_280,h_280,f_auto,q_auto:sensitive/b9bd6dc6bbb84a8faa3dae8400320b3e_9366/GX6632_700_GX6632_01_standard.jpg.jpg?sh=364&strip=false&sw=364'}
-const data_cart_item_3 = {product:'Ultraboost light shoes', color:'Cloud white', size:'12 UK', price:5200000, image:'https://assets.adidas.com/images/w_280,h_280,f_auto,q_auto:sensitive/fad67a1b20b846bc9307aead0167670a_9366/GY7477_700_GY7477_01_standard.jpg.jpg?sh=364&strip=false&sw=364'}
-const data_cart_item_4 = {product:'Ultraboost light shoes', color:'Cloud white', size:'12 UK', price:5200000, image:'https://assets.adidas.com/images/w_280,h_280,f_auto,q_auto:sensitive/42fe8c7f1eb14c548bceaf1800d3b0e1_9366/IC1299_160_IC1299_03_standard.jpg.jpg?sh=364&strip=false&sw=364'}
-const data_cart = [data_cart_item_1,data_cart_item_2,data_cart_item_3,data_cart_item_4]
+
 const Cart = () => {
+    let {authToken, HandleError, user} = useContext(AuthContext)
+    let navigate = useNavigate()
+
     const [cart,setCart] = useState()
     const [quantity, setQuantity] = useState()
 
     const [togglePromoCodeValidation, setTogglePromoCodeValidation] = useState(false)
-    let {authToken, HandleError} = useContext(AuthContext)
-    let navigate = useNavigate()
+    
+    
 
     const getCartData = async() => {
-        let response = await fetch('http://127.0.0.1:8000/api/cart/',{
+        if(!user){
+            HandleError({status: '405 - Authentication forbidden', detail: 'You need to login to view cart', tologin: true, toregister:true })
+            navigate('/error')
+        }
+        let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/',{
             method: 'GET',
             headers: {
                 'Content-Type':'application/json',
@@ -85,7 +88,7 @@ const Cart = () => {
     
 
     const handleSubmitUpdatequantity = async ()=>{
-        let response = await fetch("http://127.0.0.1:8000/api/cart/update/",{
+        let response = await fetch("khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/update/",{
             method: 'POST',
             headers: {
                 'Content-Type':'application/json',
@@ -143,7 +146,7 @@ const Cart = () => {
             <p>TOTAL [{getTotalQuantity()} items] <span>{getTotalPrice()} $</span></p>
             <p>Items in your bag are not reserved — check out now to make them yours.</p>
             {cart.order_item.map((item,index)=>{return (
-            <div className='cart-yourbag-item' id={"item_"+index}>
+            <div className='cart-yourbag-item' id={"item_"+index} key={index}>
                 <div className='cart-yourbag-icon'>
                     {/* onClick={()=>{setCart(cart.filter((itemvalue,index)=>{console.log( index);console.log( removeindex);return index !== removeindex }))}} */}
                     <RxCross1 className='cart-yourbag-icon_1' size='1rem' id={index}  onClick={(e)=>{handleRemoveCart(e)}}/>
