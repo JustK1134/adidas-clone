@@ -34,7 +34,7 @@ const LeftPart = ({productData, sideBar, stopPosition}) => {
     }
 
 
-    const response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/',{
+    const response = await fetch('https://khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/',{
       method: 'POST',
       headers: {
         'Content-Type':'application/json',
@@ -53,7 +53,7 @@ const LeftPart = ({productData, sideBar, stopPosition}) => {
   }
 
   const getpopUpCartData = async () => {
-    let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/',{
+    let response = await fetch('https://khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/',{
       method: 'GET',
       headers: {
         'Content-Type':'application/json',

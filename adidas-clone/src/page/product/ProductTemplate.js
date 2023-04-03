@@ -25,7 +25,7 @@ const ProductTemplate = () => {
 
   const [productData, setProductData] =useState()
   const getProductData = async ()=>{
-    let response = await fetch(`khoiluc-portfolio-adidas-clone.up.railway.app/api/shop/product/${product_id}/`)
+    let response = await fetch(`https://khoiluc-portfolio-adidas-clone.up.railway.app/api/shop/product/${product_id}/`)
     let fetch_data = await response.json()
     if (response.status === 200){
       console.log('FETCH_DATA: ', fetch_data[0])

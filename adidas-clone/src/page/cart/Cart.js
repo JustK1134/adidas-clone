@@ -25,7 +25,7 @@ const Cart = () => {
             HandleError({status: '405 - Authentication forbidden', detail: 'You need to login to view cart', tologin: true, toregister:true })
             navigate('/error')
         }
-        let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/',{
+        let response = await fetch('https://khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/',{
             method: 'GET',
             headers: {
                 'Content-Type':'application/json',
@@ -88,7 +88,7 @@ const Cart = () => {
     
 
     const handleSubmitUpdatequantity = async ()=>{
-        let response = await fetch("khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/update/",{
+        let response = await fetch("https://khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/update/",{
             method: 'POST',
             headers: {
                 'Content-Type':'application/json',

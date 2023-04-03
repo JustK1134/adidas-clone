@@ -22,7 +22,7 @@ export const AuthProvider = ({children}) =>{
     let loginUser = async (e) => {
         e.preventDefault()
 
-        let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/authentication/token/', {
+        let response = await fetch('https://khoiluc-portfolio-adidas-clone.up.railway.app/api/authentication/token/', {
             method : 'POST',
             headers : {
                 'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ export const AuthProvider = ({children}) =>{
  
         
 
-        let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/authentication/token/refresh/', {
+        let response = await fetch('https://khoiluc-portfolio-adidas-clone.up.railway.app/api/authentication/token/refresh/', {
             method : 'POST',
             headers : {
                 'Content-Type': 'application/json',

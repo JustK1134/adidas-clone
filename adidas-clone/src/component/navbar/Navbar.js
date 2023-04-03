@@ -54,7 +54,7 @@ const Navbar = () => {
 
     const handleSearch = async () =>{
         console.log("search:",search)
-        let response = await fetch('khoiluc-portfolio-adidas-clone.up.railway.app/api/shop/search',{
+        let response = await fetch('https://khoiluc-portfolio-adidas-clone.up.railway.app/api/shop/search',{
             method: 'POST',
             headers: {
                 'Content-Type':'application/json',

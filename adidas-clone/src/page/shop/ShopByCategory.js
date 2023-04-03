@@ -27,7 +27,7 @@ const ShopByCategory = () => {
 
   const getShopData = async () =>{
 
-    let response = await fetch(`khoiluc-portfolio-adidas-clone.up.railway.app/api/shop/category/${category}/`)
+    let response = await fetch(`https://khoiluc-portfolio-adidas-clone.up.railway.app/api/shop/category/${category}/`)
     let fetch_data = await response.json()
     if (response.status === 200){
       console.log('FETCH_DATA: ', fetch_data)

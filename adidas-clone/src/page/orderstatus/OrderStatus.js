@@ -23,7 +23,7 @@ const OrderStatus = () => {
     let navigate = useNavigate()
 
     const getOrderData = async () => {
-        let response = await fetch(`khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/orderstatus/${order_id}/`,{
+        let response = await fetch(`https://khoiluc-portfolio-adidas-clone.up.railway.app/api/cart/orderstatus/${order_id}/`,{
             method: 'GET',
             headers: {
                 'Content-Type':'application/json',
