@@ -4,7 +4,7 @@
 
 ![certificate](https://github.com/JustK1134/adidas-clone/blob/main/adidas-clone/src/component/asset/project1.png)
 
-![certificate](https://github.com/JustK1134/adidas-clone/blob/main/adidas-clone/src/component/asset/project1.png)
+![certificate](https://github.com/JustK1134/adidas-clone/blob/main/adidas-clone/src/component/asset/Register.png)
 
 An E-Commercial Store clonning from Adidas.
 
