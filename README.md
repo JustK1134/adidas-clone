@@ -47,6 +47,13 @@ python manage.py runserver
 
 ```
 
+### Perform adding cart and checking out
+
+login with:
+
+- username: admin
+- password: khoi1234
+
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
