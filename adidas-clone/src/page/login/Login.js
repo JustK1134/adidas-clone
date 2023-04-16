@@ -27,12 +27,12 @@ const Login = () => {
                 <p><span>Forgotten your password?</span> </p>
                 <div className='inputBox'>
                     <input placeholder=' ' type='text' required="required" value={username} name='username' onChange={(e) => {setToggleLoginValidation({...toggleLoginValidation,m:true});setUsername(e.target.value)}}/>
-                    <span className='inputBox-effect'>Email</span>
+                    <span className='inputBox-effect'>Email (Please type: admin)</span>
                     {toggleLoginValidation.m && <span className='inputBox-error'>Please enter a valid e-mail address</span>}
                 </div>
                 <div className='inputBox'>
                     <input  placeholder=' '  type='password' required="required" value={password} name ='password' onChange={(e)=>{setToggleLoginValidation({...toggleLoginValidation,p:true});setPassword(e.target.value)}} pattern="^(?=.*[a-z])(?=.*[0-9]).{4,12}$"/>
-                    <span className='inputBox-effect'>Password</span>
+                    <span className='inputBox-effect'>Password (Please type: khoi1234)</span>
                     {toggleLoginValidation.p && <span className='inputBox-error'>Please enter a valid password.</span>}
                 </div>
                 <label className='login-checkbox-field'> Keep me logged in. <span>More Info</span>
